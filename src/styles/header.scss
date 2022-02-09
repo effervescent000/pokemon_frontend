@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: $green;
+    .left-side {
+        .logo {
+            color: $off-white;
+            font-size: 30px;
+        }
+    }
+}

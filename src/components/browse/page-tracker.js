@@ -5,7 +5,6 @@ const PageTracker = ({ setListingOffset, itemsPerPage }) => {
     const [pageCount, setPageCount] = useState(Math.ceil(1118 / itemsPerPage));
 
     const handlePageClick = (event) => {
-        console.log(`Setting item offset to ${event.selected * itemsPerPage}`);
         setListingOffset(event.selected * itemsPerPage);
     };
 
@@ -16,6 +15,15 @@ const PageTracker = ({ setListingOffset, itemsPerPage }) => {
             previousLabel="<"
             pageCount={pageCount}
             onPageChange={handlePageClick}
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            breakLinkClassName="page-link"
         />
     );
 };

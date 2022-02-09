@@ -1,0 +1,23 @@
+.content-wrapper {
+    margin: 2em 5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    .results-wrapper {
+        .interaction-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .results {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            .card-wrapper {
+                .image-wrapper {
+                    img {
+                        height: 10em;
+                    }
+                }
+            }
+        }
+    }
+}

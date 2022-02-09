@@ -13,7 +13,6 @@ const Results = ({ filters }) => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon?offset=${listingOffset}&limit=${itemsPerPage}`)
             .then((response) => {
-                console.log("Updating current listings");
                 setCurrentListings(response.data.results);
             })
             .catch((error) => console.log(error.response));
