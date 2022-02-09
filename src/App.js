@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "bootstrap/scss/bootstrap.scss";
+import "./styles/main.scss";
+
+import Header from "./components/header";
+import { UserContext } from "./components/user-context";
+import BrowsePage from "./components/browse/browse-page";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [user, setUser] = useState({});
+
+    const toggleLogin = () => {
+        setLoggedIn(!loggedIn);
+    };
+
+    return (
+        <div className="App">
+            <UserContext.Provider value={{ loggedIn, toggleLogin, user, setUser }}>
+                <Header />
+                <BrowsePage />
+            </UserContext.Provider>
+        </div>
+    );
 }
 
 export default App;
