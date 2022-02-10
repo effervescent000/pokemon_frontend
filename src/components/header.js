@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 import { UserContext } from "./user-context";
 import SignupModal from "./auth/signup-modal";
@@ -35,7 +36,9 @@ const Header = (props) => {
     return (
         <div className="header">
             <div className="left-side">
-                <span className="logo">PokeViewer</span>
+                <Link className="logo" to="/">
+                    PokeViewer
+                </Link>
             </div>
             <div className="right-side">
                 {loggedIn ? (
