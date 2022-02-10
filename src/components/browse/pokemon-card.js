@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const PokemonCard = ({ pokemon }) => {
@@ -25,14 +26,16 @@ const PokemonCard = ({ pokemon }) => {
     return (
         <>
             {Object.keys(data).length > 0 ? (
-                <div className="card-wrapper">
-                    <div className="image-wrapper">
-                        <img src={data.sprites.other["official-artwork"].front_default} />
+                <Link to={`/pokemon/${data.id}`}>
+                    <div className="card-wrapper">
+                        <div className="image-wrapper">
+                            <img src={data.sprites.other["official-artwork"].front_default} />
+                        </div>
+                        <div className="label">{`${data.name
+                            .slice(0, 1)
+                            .toUpperCase()}${data.name.slice(1)}`}</div>
                     </div>
-                    <div className="label">{`${data.name
-                        .slice(0, 1)
-                        .toUpperCase()}${data.name.slice(1)}`}</div>
-                </div>
+                </Link>
             ) : (
                 <div className="card-wrapper">Loading...</div>
             )}
