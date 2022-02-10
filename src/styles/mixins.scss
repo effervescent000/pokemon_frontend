@@ -5,6 +5,7 @@
     border-radius: 5px;
     transition: 0.25s ease-in-out;
     padding: 0.25em;
+    font-size: 0.95rem;
     @content;
 
     &:active {

@@ -7,15 +7,43 @@
         .interaction-wrapper {
             display: flex;
             justify-content: space-between;
+            margin: 1em;
+            .sort-wrapper {
+                display: flex;
+                gap: 0.5em;
+                align-items: center;
+                button {
+                    @include button-styling;
+                }
+            }
+            .pagination-wrapper {
+                display: flex;
+                gap: 1em;
+                select {
+                    @include input-styling;
+                }
+                .pagination {
+                    margin-bottom: 0;
+                }
+            }
         }
         .results {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             justify-items: center;
+            gap: 1em;
+            a {
+                text-decoration: none;
+                color: $black;
+            }
             .card-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 .image-wrapper {
                     img {
                         height: 10em;
+                        width: 10em;
                     }
                 }
             }
