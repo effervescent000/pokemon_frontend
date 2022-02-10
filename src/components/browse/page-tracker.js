@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
-const PageTracker = ({ setListingOffset, itemsPerPage }) => {
-    const [pageCount, setPageCount] = useState(Math.ceil(1118 / itemsPerPage));
+const PageTracker = ({ setListingOffset, itemsPerPage, pokemon }) => {
+    const [pageCount, setPageCount] = useState(0);
+
+    useEffect(() => {
+        setPageCount(Math.ceil(pokemon.length / itemsPerPage));
+    }, [pokemon]);
 
     const handlePageClick = (event) => {
         setListingOffset(event.selected * itemsPerPage);

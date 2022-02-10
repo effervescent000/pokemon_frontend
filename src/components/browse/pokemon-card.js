@@ -6,9 +6,18 @@ const PokemonCard = ({ pokemon }) => {
 
     useEffect(() => {
         axios
-            .get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+            .get(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name}`)
             .then((response) => {
-                setData(response.data);
+                for (const variety of response.data.varieties) {
+                    if (variety.is_default) {
+                        axios
+                            .get(variety.pokemon.url)
+                            .then((response) => {
+                                setData(response.data);
+                            })
+                            .catch((error) => console.log(error.response));
+                    }
+                }
             })
             .catch((error) => console.log(error.response));
     }, [pokemon]);
@@ -20,6 +29,9 @@ const PokemonCard = ({ pokemon }) => {
                     <div className="image-wrapper">
                         <img src={data.sprites.other["official-artwork"].front_default} />
                     </div>
+                    <div className="label">{`${data.name
+                        .slice(0, 1)
+                        .toUpperCase()}${data.name.slice(1)}`}</div>
                 </div>
             ) : (
                 <div className="card-wrapper">Loading...</div>
