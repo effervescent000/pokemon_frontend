@@ -36,24 +36,30 @@ const PokemonDetailPage = (props) => {
         <div className="detail-wrapper">
             {Object.keys(pokemon).length > 0 ? (
                 <>
-                    <h2>{`${pokemon.name.slice(0, 1).toUpperCase()}${pokemon.name.slice(1)}`}</h2>
-                    <div className="images-wrapper">
-                        <div className="main-image">
-                            <img
-                                src={pokemon.sprites.other["official-artwork"].front_default}
-                                alt={pokemon.name}
-                            />
-                        </div>
-                        <div className="sub-images">
-                            <img src={pokemon.sprites.front_default} alt="" />
-                            <img src={pokemon.sprites.back_default} alt="" />
-                            <img src={pokemon.sprites.front_shiny} alt="" />
-                            <img src={pokemon.sprites.back_shiny} alt="" />
+                    <div className="center-column">
+                        <h2>{`${pokemon.name.slice(0, 1).toUpperCase()}${pokemon.name.slice(
+                            1
+                        )}`}</h2>
+                        <div className="images-wrapper">
+                            <div className="main-image">
+                                <img
+                                    src={pokemon.sprites.other["official-artwork"].front_default}
+                                    alt={pokemon.name}
+                                />
+                            </div>
+                            <div className="sub-images">
+                                <img src={pokemon.sprites.front_default} alt="" />
+                                <img src={pokemon.sprites.back_default} alt="" />
+                                <img src={pokemon.sprites.front_shiny} alt="" />
+                                <img src={pokemon.sprites.back_shiny} alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className="notes-wrapper">
                         <NoteForm id={pokemon.id} notes={notes} setNotes={setNotes} />
-                        {Object.keys(notes).length > 0 ? renderNotes() : null}
+                        {Object.keys(notes).length > 0 ? (
+                            <div className="notes-output-wrapper">{renderNotes()}</div>
+                        ) : null}
                     </div>
                 </>
             ) : (

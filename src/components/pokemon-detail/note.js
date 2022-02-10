@@ -3,7 +3,10 @@ import React from "react";
 const Note = ({ note }) => {
     return (
         <div className="note-wrapper">
-            <span className="username">{note.user.username}</span>
+            <div className="note-header">
+                <span className="username">{note.user.username}</span>
+            </div>
+
             <p>{note.content}</p>
         </div>
     );

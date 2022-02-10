@@ -1,0 +1,60 @@
+.detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .center-column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .images-wrapper {
+            .sub-images {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .notes-wrapper {
+        width: 50%;
+        .note-form-wrapper {
+            display: flex;
+            justify-content: center;
+            form {
+                width: 50%;
+                .textarea-wrapper {
+                    textarea {
+                        background-color: $off-white;
+                        border: 1px solid $dark-pink;
+                        border-radius: 5px;
+                        padding: 3px;
+                        width: 100%;
+                    }
+                }
+                .bottom-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .notes-output-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.25em;
+            .note-wrapper {
+                border: 1px dashed $dark-pink;
+                padding: 5px;
+                border-radius: 5px;
+                .note-header {
+                    width: 90%;
+                    border-bottom: 1px solid $black;
+                    .username {
+                        font-size: 1.2rem;
+                    }
+                }
+                p {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+    }
+}
