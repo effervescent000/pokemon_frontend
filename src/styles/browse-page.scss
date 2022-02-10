@@ -1,7 +1,8 @@
 .content-wrapper {
     margin: 2em 5em;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    gap: 2em;
     .results-wrapper {
         .interaction-wrapper {
             display: flex;
@@ -16,6 +17,34 @@
                     img {
                         height: 10em;
                     }
+                }
+            }
+        }
+    }
+    .filter-wrapper {
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            .inputs-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25em;
+                .select-field-wrapper {
+                    display: grid;
+                    grid-template-columns: 5em 10em;
+                    select {
+                        @include input-styling;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .buttons-wrapper {
+                display: flex;
+                gap: 0.5em;
+                button {
+                    @include button-styling;
                 }
             }
         }
