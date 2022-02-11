@@ -42,14 +42,14 @@ const Header = (props) => {
             </div>
             <div className="right-side">
                 {loggedIn ? (
-                    <div className="logged-in-header">
+                    <div className="logged-in-header account-status">
                         <span>Hi, {user.username}</span>{" "}
                         <button className="link-button" onClick={handleLogout}>
                             Logout
                         </button>
                     </div>
                 ) : (
-                    <div className="logged-out-header">
+                    <div className="logged-out-header account-status">
                         <button className="link-button" onClick={toggleLoginModal}>
                             Login
                         </button>
