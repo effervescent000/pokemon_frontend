@@ -29,7 +29,10 @@ const PokemonCard = ({ pokemon }) => {
                 <Link to={`/pokemon/${data.id}`}>
                     <div className="card-wrapper">
                         <div className="image-wrapper">
-                            <img src={data.sprites.other["official-artwork"].front_default} />
+                            <img
+                                src={data.sprites.other["official-artwork"].front_default}
+                                alt={data.name}
+                            />
                         </div>
                         <div className="label">{`${data.name
                             .slice(0, 1)

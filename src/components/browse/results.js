@@ -128,7 +128,7 @@ const Results = ({ filters }) => {
                         By Name
                     </button>
                 </div>
-                <div className="page-wrapper">
+                <div className="pagination-wrapper">
                     <select
                         name="items-per-page-select"
                         value={itemsPerPage}

@@ -4,9 +4,23 @@
     padding: 1em;
     background-color: $green;
     .left-side {
+        margin: 0 2em;
         .logo {
             color: $off-white;
             font-size: 30px;
+            text-decoration: none;
+        }
+    }
+    .right-side {
+        margin: 0 2em;
+        .account-status {
+            display: flex;
+            flex-direction: column;
+        }
+        .link-button {
+            color: $off-white;
+            background-color: transparent;
+            border: none;
         }
     }
 }

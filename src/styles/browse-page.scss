@@ -1,20 +1,137 @@
 .content-wrapper {
     margin: 2em 5em;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    gap: 2em;
     .results-wrapper {
         .interaction-wrapper {
             display: flex;
             justify-content: space-between;
+            margin: 1em;
+            .sort-wrapper {
+                display: flex;
+                gap: 0.5em;
+                align-items: center;
+                button {
+                    @include button-styling;
+                }
+            }
+            .pagination-wrapper {
+                display: flex;
+                gap: 1em;
+                select {
+                    @include input-styling;
+                }
+                .pagination {
+                    margin-bottom: 0;
+                }
+            }
         }
         .results {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             justify-items: center;
+            gap: 1em;
+            a {
+                text-decoration: none;
+                color: $black;
+            }
             .card-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 .image-wrapper {
                     img {
                         height: 10em;
+                        width: 10em;
+                    }
+                }
+            }
+        }
+    }
+    .filter-wrapper {
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            .inputs-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25em;
+                .select-field-wrapper {
+                    display: grid;
+                    grid-template-columns: 5em 10em;
+                    select {
+                        @include input-styling;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .buttons-wrapper {
+                display: flex;
+                gap: 0.5em;
+                button {
+                    @include button-styling;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        .results-wrapper {
+            order: 2;
+        }
+        .filter-wrapper {
+            order: 1;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .content-wrapper {
+        .results-wrapper {
+            .results {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .content-wrapper {
+        margin: 2em;
+    }
+}
+
+@media (max-width: 700px) {
+    .content-wrapper {
+        .results-wrapper {
+            .interaction-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                align-items: center;
+                margin: 1em;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .content-wrapper {
+        .results-wrapper {
+            .results {
+                .card-wrapper {
+                    .image-wrapper {
+                        img {
+                            height: 5em;
+                            width: 5em;
+                        }
                     }
                 }
             }

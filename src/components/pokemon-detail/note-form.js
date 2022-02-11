@@ -30,9 +30,16 @@ const NoteForm = ({ id, notes, setNotes }) => {
                 onSubmit={(values) => handleSubmit(values)}
             >
                 <Form>
-                    <TextAreaField label="" name="content" placeholder="Add a note here" />
-                    <Checkbox label="Private?" name="private" />
-                    <button type="submit">Save</button>
+                    <TextAreaField
+                        label=""
+                        name="content"
+                        divclass="textarea-wrapper"
+                        placeholder="Add a note here"
+                    />
+                    <div className="bottom-wrapper">
+                        <Checkbox label="Private?" name="private" />
+                        <button type="submit">Save</button>
+                    </div>
                 </Form>
             </Formik>
         </div>
